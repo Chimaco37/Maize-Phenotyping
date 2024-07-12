@@ -1,7 +1,7 @@
-# Maize-Phenotyping
-DIY ultra-affordable, high-throughput, and accurate maize phenotyping systems working at single-plant resolution in field conditions    
 ![logo](https://github.com/user-attachments/assets/1392e8f6-083a-4b8b-8c88-b227d3edfdba)
-
+# Maize-Phenotyping
+DIY ultra-affordable, high-throughput, and accurate maize phenotyping systems working at single-plant resolution in field conditions
+##
 ## Plant Architecture Phenotyping System
 ### Model Inference Command Line
 yolo track model=/home/bingxing2/home/scx6853/plant_architecture_model/Final_PAPv3.pt tracker="bytetrack.yaml" source=/path/to/your/video/folder save_txt=True save=True show_labels=True show_conf=True boxes=True conf=0.6 iou=0.5 imgsz=641 agnostic_nms=False retina_masks=True device=0 name=plant_architecture
