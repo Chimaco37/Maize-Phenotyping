@@ -3,8 +3,11 @@
 DIY ultra-affordable, high-throughput, and accurate maize phenotyping systems working at single-plant resolution in field conditions
 ##
 ## Plant Architecture Phenotyping System
+### Model Training Command Line
+
+
 ### Model Inference Command Line
-yolo track model=/home/bingxing2/home/scx6853/plant_architecture_model/Final_PAPv3.pt tracker="bytetrack.yaml" source=/path/to/your/video/folder save_txt=True save=True show_labels=True show_conf=True boxes=True conf=0.6 iou=0.5 imgsz=641 agnostic_nms=False retina_masks=True device=0 name=plant_architecture
+yolo track model=/path/to/plant_architecture.pt tracker="bytetrack.yaml" source=/path/to/your/video/folder save_txt=True save=True show_labels=True show_conf=True boxes=True conf=0.6 iou=0.5 imgsz=641 agnostic_nms=False retina_masks=True device=0 name=plant_architecture
 
 
 ## Ear Phenotyping System
@@ -20,7 +23,7 @@ yolo segment predict model=WEP.pt source=/path/to/ear/image/folder/ name='ear' d
 ### Model Inference Command Line
 
 ##### Marker Segmentation
-yolo task=segment mode=predict model=Marker.pt source=/path/to/your/original/image/folder conf=0.5 show_labels=True show_conf=False boxes=True max_det=4 save_txt=True device=cpu
+yolo task=segment mode=predict model=/path/to/Marker.pt source=/path/to/your/original/image/folder conf=0.5 show_labels=True show_conf=False boxes=True max_det=4 save_txt=True device=cpu
 
 ##### Leaf Segmentation
-yolo task=segment mode=predict model=Leaf.pt source=/path/to/your/undistorted/image/folder conf=0.5 show_labels=True show_conf=False boxes=True max_det=1 save_txt=True device=cpu
+yolo task=segment mode=predict model=/path/to/Leaf.pt source=/path/to/your/undistorted/image/folder conf=0.5 show_labels=True show_conf=False boxes=True max_det=1 save_txt=True device=cpu
