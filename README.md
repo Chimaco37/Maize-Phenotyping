@@ -2,23 +2,32 @@
 # Maize Phenotyping System
 > DIY ultra-affordable, high-throughput, and accurate maize phenotyping systems working at single-plant resolution in field conditions
 
+## Features
 
-## GUI
-We developed user-friendly Graphical User Interface (GUI) for users without programming expertise.
+- **Graphical User Interface (GUI):** User-friendly interface for users without programming expertise.
+- **Command Line Interface (CLI):** Direct use via command line.
 
+## Setup
 
-## CLI
-Phenotyping system may be used directly in the Command Line Interface (CLI).
-### Setup:
-- Clone the repository to your local computer:
+1. **Clone the repository:**
 ```
 git clone https://github.com/Chimaco37/Maize-Phenotyping.git
 ```
-- Install dependancies:
+2. **Install dependencies:**
 ```
 cd Maize-Phenotyping/
 pip install -r requirements.txt
 ```
+3. **Download necessary models:**
+- [Figshare Repository](https://doi.org/10.6084/m9.figshare.26282731)
+
+## Usage
+
+### The 'Giraffe' System
+
+- **Model inference:**
+
+
 - Download the necessary models from our Figshare repository:
 https://doi.org/10.6084/m9.figshare.26282731
 - Run corresponding phenotyping workflow
