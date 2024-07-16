@@ -46,6 +46,7 @@ optional arguments:
 - **Video Preprocessing:**
 ```
 python Convert_videos_to_projections.py -v VIDEO_FOLDER -p PARAMETER_FOLDER -o OUTPUT_PATH -c CORES_NUMBER -i PYTHON_INTERPRETER
+
 options:
   -v VIDEO_FOLDER,       Path to the original video folder
   -p PARAMETER_FOLDER,   Path to the image undistortion parameter folder
