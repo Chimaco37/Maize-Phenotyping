@@ -45,7 +45,7 @@ optional arguments:
 ```
 
 
-### The 'Squirrel' System
+### 🐿️The 'Squirrel' System
 
 - **Video Preprocessing:**
 
@@ -91,7 +91,7 @@ optional arguments:
 ```
 
 
-### The 'Lizard' System
+### 🦎The 'Lizard' System
 
 - **Marker Segmentation & Image Undistortion:**
 
