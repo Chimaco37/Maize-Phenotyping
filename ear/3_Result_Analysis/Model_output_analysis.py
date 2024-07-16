@@ -290,14 +290,14 @@ import argparse
 
 if __name__ == "__main__":
     # Create the parser
-    parser = argparse.ArgumentParser(description="Analyze ear data")
+    parser = argparse.ArgumentParser(description="Analyze ear and projection model output data")
 
     # Add arguments
-    parser.add_argument('-i', '--projection_image_folder', type=str, required=True, help='Path to the projection image folder')
-    parser.add_argument('-e', '--ear_label_folder', type=str, required=True, help='Path to the ear label folder')
-    parser.add_argument('-p', '--projection_label_folder', type=str, required=True, help='Path to the projection label folder')
-    parser.add_argument('-o', '--output_path', type=str, required=True, help='Output file path')
-    parser.add_argument('-m', '--model_path', type=str, required=True, help='CNN model path')
+    parser.add_argument('-i', '--projection_image_folder', default='./images/projection/', type=str, required=True, help='Path to the projection image folder')
+    parser.add_argument('-e', '--ear_label_folder', default='./result/ear/labels/', type=str, required=True, help='Path to the ear label folder')
+    parser.add_argument('-p', '--projection_label_folder', default='./result/projection/labels/', type=str, required=True, help='Path to the projection label folder')
+    parser.add_argument('-o', '--output_path', default='./', type=str, required=True, help='Output file path')
+    parser.add_argument('-m', '--model_path', default='./models/', type=str, required=True, help='CNN model path')
 
     # Parse the arguments
     args = parser.parse_args()

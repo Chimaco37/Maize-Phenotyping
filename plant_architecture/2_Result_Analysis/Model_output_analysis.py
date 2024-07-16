@@ -306,12 +306,12 @@ import argparse
 
 if __name__ == "__main__":
     # Create the parser
-    parser = argparse.ArgumentParser(description="Analyze plant architecture data")
+    parser = argparse.ArgumentParser(description="Analyze plant architecture model output results")
 
     # Add arguments
-    parser.add_argument('-l', '--label_folder', type=str, required=True, help='Path to the label folder')
-    parser.add_argument('-d', '--distance_folder', type=str, required=True, help='Path to the distance folder')
-    parser.add_argument('-o', '--output_path', type=str, required=True, help='Output file path')
+    parser.add_argument('-l', '--label_folder', default='./labels/', type=str, required=True, help='Path to the label folder')
+    parser.add_argument('-d', '--distance_folder', default='./distances/', type=str, required=True, help='Path to the distance folder')
+    parser.add_argument('-o', '--output_path', default='./', type=str, required=True, help='Output file path')
 
     # Parse the arguments
     args = parser.parse_args()

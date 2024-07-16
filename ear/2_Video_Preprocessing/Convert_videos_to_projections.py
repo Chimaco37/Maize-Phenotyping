@@ -7,11 +7,11 @@ import argparse
 parser = argparse.ArgumentParser(description="Process videos into projections")
 
 # Add arguments
-parser.add_argument('-v', '--video_folder', type=str, required=True, help='Path to the original video folder')
-parser.add_argument('-p', '--parameter_folder', type=str, required=True,
+parser.add_argument('-v', '--video_folder', default='./videos/', type=str, required=True, help='Path to the original video folder')
+parser.add_argument('-p', '--parameter_folder', default='./image_process/', type=str, required=True,
                     help='Path to the image undistortion parameter folder')
-parser.add_argument('-o', '--output_path', type=str, required=True, help='Output undistorted image path')
-parser.add_argument('-c', '--cores_number', type=int, required=True,
+parser.add_argument('-o', '--output_path',  default='./undistorted/', type=str, required=True, help='Output undistorted image path')
+parser.add_argument('-c', '--cores_number', default=5, type=int, required=True,
                     help='Number of cores used for parallel processing')
 parser.add_argument('-i', '--python_interpreter', type=str, required=True,
                     help='Path to your python interpreter')
