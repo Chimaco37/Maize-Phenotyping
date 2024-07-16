@@ -31,39 +31,27 @@ pip install -r requirements.txt
 yolo track model=/path/to/plant_architecture.pt tracker="bytetrack.yaml" source=/path/to/your/video/folder save_txt=True save=True show_labels=True show_conf=True boxes=True conf=0.6 iou=0.5 imgsz=641 agnostic_nms=False retina_masks=True device=0 name=plant_architecture
 ```
 - **Output analysis:**
-`python Model_output_analysis.py [-h] -l LABEL_FOLDER -d DISTANCE_FOLDER -o OUTPUT_PATH` 
 ```
-Analyze plant architecture data
+python Model_output_analysis.py -l LABEL_FOLDER -d DISTANCE_FOLDER -o OUTPUT_PATH
+
 optional arguments:
-  -h, --help            show this help message and exit
-  -l LABEL_FOLDER, --label_folder LABEL_FOLDER
-                        Path to the label folder
-  -d DISTANCE_FOLDER, --distance_folder DISTANCE_FOLDER
-                        Path to the distance folder
-  -o OUTPUT_PATH, --output_path OUTPUT_PATH
-                        Output file path
+  -l LABEL_FOLDER,      Path to the model output label folder
+  -d DISTANCE_FOLDER,   Path to the corresponding distance folder of the videos
+  -o OUTPUT_PATH,       Analyzed results output folder
 ```
 
 
 ### 🐿️The 'Squirrel' System
 
 - **Video Preprocessing:**
-
-`python Convert_videos_to_projections.py [-h] -v VIDEO_FOLDER -p PARAMETER_FOLDER -o OUTPUT_PATH -c CORES_NUMBER -i PYTHON_INTERPRETER`
 ```
-Process videos into projections
+python Convert_videos_to_projections.py -v VIDEO_FOLDER -p PARAMETER_FOLDER -o OUTPUT_PATH -c CORES_NUMBER -i PYTHON_INTERPRETER
 options:
-  -h, --help            show this help message and exit
-  -v VIDEO_FOLDER, --video_folder VIDEO_FOLDER
-                        Path to the original video folder
-  -p PARAMETER_FOLDER, --parameter_folder PARAMETER_FOLDER
-                        Path to the image undistortion parameter folder
-  -o OUTPUT_PATH, --output_path OUTPUT_PATH
-                        Output undistorted image path
-  -c CORES_NUMBER, --cores_number CORES_NUMBER
-                        Number of cores used for parallel processing
-  -i PYTHON_INTERPRETER, --python_interpreter PYTHON_INTERPRETER
-                        Path to your python interpreter
+  -v VIDEO_FOLDER,       Path to the original video folder
+  -p PARAMETER_FOLDER,   Path to the image undistortion parameter folder
+  -o OUTPUT_PATH,        Output undistorted image folder
+  -c CORES_NUMBER,       Number of cores used for parallel processing
+  -i PYTHON_INTERPRETER, Path to your python interpreter
 ```
 - **Model inference for Kernel-related and Ear-related traits:**
 
@@ -73,54 +61,43 @@ yolo segment predict model=projection.pt source=/path/to/projection/image/folder
 yolo segment predict model=ear.pt source=/path/to/ear/image/folder/ name='ear' device=cpu conf=0.5 show_labels=False show_conf=False boxes=True max_det=1 save_txt=True retina_masks=True
 ```
 - **Output analysis:**
-`python Model_output_analysis.py [-h] -i PROJECTION_IMAGE_FOLDER -e EAR_LABEL_FOLDER -p PROJECTION_LABEL_FOLDER -o OUTPUT_PATH -m MODEL_PATH` 
 ```
-Analyze ear data
+python Model_output_analysis.py -i PROJECTION_IMAGE_FOLDER -e EAR_LABEL_FOLDER -p PROJECTION_LABEL_FOLDER -o OUTPUT_PATH -m MODEL_PATH
+
 optional arguments:
-  -h, --help            show this help message and exit
-  -i PROJECTION_IMAGE_FOLDER, --projection_image_folder PROJECTION_IMAGE_FOLDER
-                        Path to the projection image folder
-  -e EAR_LABEL_FOLDER, --ear_label_folder EAR_LABEL_FOLDER
-                        Path to the ear label folder
-  -p PROJECTION_LABEL_FOLDER, --projection_label_folder PROJECTION_LABEL_FOLDER
-                        Path to the projection label folder
-  -o OUTPUT_PATH, --output_path OUTPUT_PATH
-                        Output file path
-  -m MODEL_PATH, --model_path MODEL_PATH
-                        CNN model path
+  -i PROJECTION_IMAGE_FOLDER,  Path to the projection image folder
+  -e EAR_LABEL_FOLDER,         Path to the ear model output label folder
+  -p PROJECTION_LABEL_FOLDER,  Path to the projection model output label folder
+  -o OUTPUT_PATH,              Analyzed results output folder
+  -m MODEL_PATH,               CNN model path folder
 ```
 
 
 ### 🦎The 'Lizard' System
 
-- **Marker Segmentation & Image Undistortion:**
+- **Marker Segmentation:**
 
 ```
 yolo task=segment mode=predict model=/path/to/marker.pt source=/path/to/your/original/image/folder conf=0.5 show_labels=True show_conf=False boxes=True max_det=4 save_txt=True device=cpu
+```
+- **Image Undistortion:**
+```
+python Image_undistortion.py -i IMAGE_FOLDER -l LABEL_FOLDER -o OUTPUT_UNDISTORTED_IMAGE_PATH
 
-`python Image_undistortion.py [-h] -i IMAGE_FOLDER -l LABEL_FOLDER -o OUTPUT_UNDISTORTED_IMAGE_PATH`
-```
-Undistort the image
 optional arguments:
-  -h, --help            show this help message and exit
-  -i IMAGE_FOLDER, --image_folder IMAGE_FOLDER
-                        Path to the original image folder
-  -l LABEL_FOLDER, --label_folder LABEL_FOLDER
-                        Path to the label folder
-  -o OUTPUT_UNDISTORTED_IMAGE_PATH, --output_undistorted_image_path OUTPUT_UNDISTORTED_IMAGE_PATH
-                        Output undistorted image path
+  -i IMAGE_FOLDER,                   Path to the original image folder
+  -l LABEL_FOLDER,                   Path to the marker model output label folder
+  -o OUTPUT_UNDISTORTED_IMAGE_PATH,  Output undistorted image folder
 ```
-- **Marker Segmentation & Leaf width calculation:**
+- **Marker Segmentation:**
 ```
 yolo task=segment mode=predict model=/path/to/leaf.pt source=/path/to/your/undistorted/image/folder conf=0.5 show_labels=True show_conf=False boxes=True max_det=1 save_txt=True device=cpu
+```
+- **Leaf width calculation:**
+```
+python Leaf_model_output_anaylsis.py -l LABEL_FOLDER -o OUTPUT_PATH`
 
-`python Leaf_model_output_anaylsis.py [-h] -l LABEL_FOLDER -o OUTPUT_PATH`
-
-Analyze leaf segmentation model output data
 optional arguments:
-  -h, --help            show this help message and exit
-  -l LABEL_FOLDER, --label_folder LABEL_FOLDER
-                        Path to the label folder
-  -o OUTPUT_PATH, --output_path OUTPUT_PATH
-                        Output file path
+  -l LABEL_FOLDER,  Path to the leaf model output label folder
+  -o OUTPUT_PATH,   Analyzed results output folder
 ```
