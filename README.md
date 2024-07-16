@@ -35,9 +35,9 @@ yolo track model=/path/to/plant_architecture.pt tracker="bytetrack.yaml" source=
 python Model_output_analysis.py -l LABEL_FOLDER -d DISTANCE_FOLDER -o OUTPUT_PATH
 
 optional arguments:
-  -l LABEL_FOLDER,      Path to the model output label folder
-  -d DISTANCE_FOLDER,   Path to the corresponding distance folder of the videos
-  -o OUTPUT_PATH,       Analyzed results output folder
+  -l: Path to the model output label folder (default is ./labels/)
+  -d: Path to the corresponding distance folder of the videos (default is ./distances/)
+  -o: Analyzed results output folder (default is ./)
 ```
 
 
@@ -47,12 +47,12 @@ optional arguments:
 ```
 python Convert_videos_to_projections.py -v VIDEO_FOLDER -p PARAMETER_FOLDER -o OUTPUT_PATH -c CORES_NUMBER -i PYTHON_INTERPRETER
 
-options:
-  -v VIDEO_FOLDER,       Path to the original video folder
-  -p PARAMETER_FOLDER,   Path to the image undistortion parameter folder
-  -o OUTPUT_PATH,        Output undistorted image folder
-  -c CORES_NUMBER,       Number of cores used for parallel processing
-  -i PYTHON_INTERPRETER, Path to your python interpreter
+optional arguments:
+  -v: Path to the original video folder (default is ./videos/)
+  -p: Path to the image undistortion parameter folder (default is ./image_process/)
+  -o: Output undistorted image folder (default is ./undistorted/)
+  -c: Number of cores used for parallel processing (default is 5)
+  -i: Path to your python interpreter
 ```
 - **Model inference for Kernel-related and Ear-related traits:**
 
@@ -66,11 +66,11 @@ yolo segment predict model=ear.pt source=/path/to/ear/image/folder/ name='ear' d
 python Model_output_analysis.py -i PROJECTION_IMAGE_FOLDER -e EAR_LABEL_FOLDER -p PROJECTION_LABEL_FOLDER -o OUTPUT_PATH -m MODEL_PATH
 
 optional arguments:
-  -i PROJECTION_IMAGE_FOLDER,  Path to the projection image folder
-  -e EAR_LABEL_FOLDER,         Path to the ear model output label folder
-  -p PROJECTION_LABEL_FOLDER,  Path to the projection model output label folder
-  -o OUTPUT_PATH,              Analyzed results output folder
-  -m MODEL_PATH,               CNN model path folder
+  -i: Path to the projection image folder (default is ./images/projection/)
+  -e: Path to the ear model output label folder (default is ./result/ear/labels/)
+  -p: Path to the projection model output label folder (default is ./result/projection/labels/)
+  -o: Analyzed results output folder (default is ./)
+  -m: CNN model path folder (default is ./models/)
 ```
 
 
@@ -86,9 +86,9 @@ yolo task=segment mode=predict model=/path/to/marker.pt source=/path/to/your/ori
 python Image_undistortion.py -i IMAGE_FOLDER -l LABEL_FOLDER -o OUTPUT_UNDISTORTED_IMAGE_PATH
 
 optional arguments:
-  -i IMAGE_FOLDER,                   Path to the original image folder
-  -l LABEL_FOLDER,                   Path to the marker model output label folder
-  -o OUTPUT_UNDISTORTED_IMAGE_PATH,  Output undistorted image folder
+  -i: Path to the original image folder (default is ./images/)
+  -l: Path to the marker model output label folder (default is ./marker/labels/)
+  -o: Output undistorted image folder (default is ./undistorted/)
 ```
 - **Marker Segmentation:**
 ```
@@ -96,9 +96,9 @@ yolo task=segment mode=predict model=/path/to/leaf.pt source=/path/to/your/undis
 ```
 - **Leaf width calculation:**
 ```
-python Leaf_model_output_anaylsis.py -l LABEL_FOLDER -o OUTPUT_PATH`
+python Leaf_model_output_anaylsis.py -l LABEL_FOLDER -o OUTPUT_PATH
 
 optional arguments:
-  -l LABEL_FOLDER,  Path to the leaf model output label folder
-  -o OUTPUT_PATH,   Analyzed results output folder
+  -l: Path to the leaf model output label folder (default is ./leaf/labels/)
+  -o: Analyzed results output folder (default is ./)
 ```
