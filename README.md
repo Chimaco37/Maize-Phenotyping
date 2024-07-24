@@ -9,33 +9,34 @@
 ## Setup
 
 1. **Clone the repository:**
-```bash
-git clone https://github.com/Chimaco37/Maize-Phenotyping.git
-```
+    ```bash
+    git clone https://github.com/Chimaco37/Maize-Phenotyping.git
+    ```
 2. **Install dependencies (Only when you need to use CLI):**
 
-```bash
-cd Maize-Phenotyping/
-pip install -r requirements.txt
-```
+    ```bash
+    cd Maize-Phenotyping/
+    pip install -r requirements.txt
+    ```
 
 3. **Download necessary models:**
 
     First, download the required model files from the [Models Figshare Repository](https://doi.org/10.6084/m9.figshare.26282731).
-
-    **Placement of model files:**
-
-    - **For the GUI of the ear phenotyping system:**
-  
-      Place the downloaded model files in the specified directory with the following steps:
-  
-```bash
-cd ear/GUI/
-unzip Models.zip
-cp Models/Ear_Models/* models/
-```
     
-    **For Command Line Interface (CLI) usage:**  
+    **Placement of model files:**
+    
+    - **For the GUI of the ear phenotyping system:**
+    
+      Place the downloaded model files in the specified directory with the following steps:
+
+        ```bash
+        cd ear/GUI/
+        unzip Models.zip
+        cp Models/Ear_Models/* models/
+        ```
+    
+    **For Command Line Interface (CLI) usage:**
+   
       You can place the models in any location that is convenient for you.
 
 4. **Download GUIs:**
@@ -45,11 +46,11 @@ cp Models/Ear_Models/* models/
    
       After downloading, place the GUI files in the respective ./GUI directory with these steps:
   
-```
-cd leaf/GUI/
-unzip GUIs.zip
-cp GUIs/Lizard.exe ./
-```
+    ```
+    cd leaf/GUI/
+    unzip GUIs.zip
+    cp GUIs/Lizard.exe ./
+    ```
 
 ## GUI Usage
 ### 🦒The 'Giraffe' System
