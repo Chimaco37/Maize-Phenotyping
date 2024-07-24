@@ -58,23 +58,27 @@
 ![image](https://github.com/user-attachments/assets/6d37a213-d0c5-4445-9cfa-335f4e5c00e6)
 
 - **Model Inference:**  
-  Click the "Model Inference" button, select the folder containing the original videos and the folder for output results. The system will then process the videos and ultimately generate phenotypic data.
+  Click the "Model Inference" button, select the folder containing the original videos and the folder for output results.  
+  The system will then process the videos and ultimately generate phenotypic data.
 
 ### 🐿️The 'Squirrel' System
 ![image](https://github.com/user-attachments/assets/efc8459c-55f9-4a39-a1b8-0e457a93f021)
 
 - **Video Process:**  
-  Click the "Video Process" button, choose the video folder and the folder where images will be saved. The system will process these videos into projections and ear images.
+  Click the "Video Process" button, choose the video folder and the folder where images will be saved.  
+  The system will process these videos into projections and ear images.
 
 - **Model inference:**  
-  Click the "Model Inference" button, select the image folder and the results output folder. The images, including projections and ear images, will be analyzed through model inference, culminating in the final results.
+  Click the "Model Inference" button, select the image folder and the results output folder.  
+  The images, including projections and ear images, will be analyzed through model inference to generate results.
 
 
 ### 🦎The 'Lizard' System
 ![image](https://github.com/user-attachments/assets/6e06a325-d988-446e-b2c6-13a2b721f2d9)
 
 - **Model inference:**  
-  Click the "Model Inference" button and choose the folder with the original leaf images and the results output folder. The marker inference model will process these images, which will be corrected for distortions and analyzed using the leaf model inference, finally outputting leaf width data.
+  Click the "Model Inference" button and choose the folder with the original leaf images and the results output folder.  
+  The marker inference model will process these images, which will be corrected for distortions and analyzed using the leaf model inference, finally outputting leaf width data.
 
 
 ## CLI Usage
