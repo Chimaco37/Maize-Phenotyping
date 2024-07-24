@@ -12,7 +12,7 @@
 ```
 git clone https://github.com/Chimaco37/Maize-Phenotyping.git
 ```
-2. **Install dependencies: (Only when you need to use CLI)**
+2. **Install dependencies (Only when you need to use CLI):**
 ```
 cd Maize-Phenotyping/
 pip install -r requirements.txt
