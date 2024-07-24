@@ -46,7 +46,7 @@ yolo segment train data=/path/to/your/plant_architecture/dataset/data.yaml model
 - **Model inference:**
 
 ```bash
-yolo track model=/path/to/plant_architecture.pt tracker="bytetrack.yaml" source=/path/to/your/video/folder save_txt=True save=True show_labels=True show_conf=True boxes=True conf=0.6 iou=0.5 imgsz=641 agnostic_nms=False retina_masks=True device=0 name=plant_architecture
+yolo track model=/path/to/plant_architecture.pt tracker=/path/to/bytetrack.yaml source=/path/to/your/video/folder save_txt=True save=True show_labels=True show_conf=True boxes=True conf=0.6 iou=0.5 imgsz=641 agnostic_nms=False retina_masks=True device=0 name=plant_architecture
 ```
 - **Output analysis:**
 ```
