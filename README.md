@@ -21,7 +21,7 @@ pip install -r requirements.txt
 3. **Download necessary models:**
 First, download the required model files from the [Models Figshare Repository](https://doi.org/10.6084/m9.figshare.26282731).
 
-**Placement of model files:**
+- **Placement of model files:**
 - For the GUI of the ear phenotyping system:
 Place the downloaded model files in the specified directory with the following steps:
  ```
