@@ -15,9 +15,7 @@ git clone https://github.com/Chimaco37/Maize-Phenotyping.git
 2. **Install dependencies:**
 ```
 cd Maize-Phenotyping/
-```
-**Only when you need to use CLI**
-```
+# Only when you need to use CLI
 pip install -r requirements.txt
 ```
 
@@ -37,7 +35,9 @@ You can place the models in any location that is convenient for you.
 
 4. **Download GUIs:**
 Download the GUI files from the [GUIs Figshare Repository](https://doi.org/10.6084/m9.figshare.26363107).
+
 **Placement of GUI files:**
+
 - **For example, for the leaf phenotyping system:**
 After downloading, place the GUI files in the respective ./GUI directory with these steps:
 ```
