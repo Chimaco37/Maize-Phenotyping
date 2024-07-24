@@ -35,7 +35,7 @@
         cp Models/Ear_Models/* models/
         ```
     
-    **For Command Line Interface (CLI) usage:**
+    - **For Command Line Interface (CLI) usage:**
    
       You can place the models in any location that is convenient for you.
 
@@ -46,11 +46,11 @@
    
       After downloading, place the GUI files in the respective ./GUI directory with these steps:
   
-    ```
-    cd leaf/GUI/
-    unzip GUIs.zip
-    cp GUIs/Lizard.exe ./
-    ```
+        ```
+        cd leaf/GUI/
+        unzip GUIs.zip
+        cp GUIs/Lizard.exe ./
+        ```
 
 ## GUI Usage
 ### 🦒The 'Giraffe' System
