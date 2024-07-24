@@ -19,7 +19,7 @@
     pip install -r requirements.txt
     ```
 
-3. **Download necessary models:**
+3. **Download necessary models:**  
 
     First, download the required model files from the [Models Figshare Repository](https://doi.org/10.6084/m9.figshare.26282731).
     
