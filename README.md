@@ -40,7 +40,7 @@ pip install -r requirements.txt
 - **Model training:**
 
 ```bash
-yolo segment train data=/path/to/your/plant_architecture/dataset/data.yaml model=/path/to/your/model.pt epochs=200 patience=30 batch=64 imgsz=640 device=0,1,2,3 name=model_train
+yolo segment train data=/path/to/your/plant_architecture/dataset/data.yaml model=/path/to/your/plant_architecture/model.pt epochs=200 patience=30 batch=64 imgsz=640 device=0 name=plant_architecture_training
 ```
 
 - **Model inference:**
@@ -58,14 +58,7 @@ optional arguments:
   -o: Analyzed results output folder (default is ./)
 ```
 
-
 ### 🐿️The 'Squirrel' System
-
-- **Model training:**
-
-```bash
-yolo segment train data=/path/to/your/dataset/data.yaml model=yolov8x-seg.pt epochs=200 batch=32 imgsz=1080 device=0,1,2,3 name=Leaf
-```
 
 - **Video Preprocessing:**
 ```
@@ -78,12 +71,20 @@ optional arguments:
   -c: Number of cores used for parallel processing (default is 5)
   -i: Path to your python interpreter
 ```
-- **Model inference for Kernel-related and Ear-related traits:**
+
+- **Model training for kernel-related and ear-related traits:**
+
+```bash
+yolo segment train data=/path/to/your/projection/dataset/data.yaml model=/path/to/your/projection/model.pt epochs=200 batch=4 patience=30 device=0,1,2,3 name=projection_model_training
+yolo segment train data=/path/to/your/ear/dataset/data.yaml model=/path/to/your/ear/model.pt epochs=200 batch=32 patience=30 device=0 name=ear_model_training
+```
+
+- **Model inference for kernel-related and ear-related traits:**
 
 ```
-yolo segment predict model=projection.pt source=/path/to/projection/image/folder/ name='projection' device=cpu conf=0.25 iou=0.4 show_labels=False save_txt=True show_conf=False boxes=False imgsz=1600 max_det=1000 retina_masks=True
+yolo segment predict model=projection.pt source=/path/to/projection/image/folder/ device=cpu conf=0.25 iou=0.4 show_labels=False save_txt=True show_conf=False boxes=False imgsz=1600 max_det=1000 retina_masks=True  name=projection
 
-yolo segment predict model=ear.pt source=/path/to/ear/image/folder/ name='ear' device=cpu conf=0.5 show_labels=False show_conf=False boxes=True max_det=1 save_txt=True retina_masks=True
+yolo segment predict model=ear.pt source=/path/to/ear/image/folder/ device=cpu conf=0.5 show_labels=False show_conf=False boxes=True max_det=1 save_txt=True retina_masks=True name=ear
 ```
 - **Output analysis:**
 ```
@@ -99,16 +100,17 @@ optional arguments:
 
 
 ### 🦎The 'Lizard' System
-- **Model training:**
+- **Model training for marker and leaf:**
 
 ```bash
-yolo segment train data=/path/to/your/dataset/data.yaml model=/path/to/your/model.pt epochs=200 patience=30 seed=2 batch=64 imgsz=640 device=0,1,2,3 name=model_train
+yolo segment train data=/path/to/your/marker/dataset/data.yaml model=model=/path/to/your/marker/model.pt epochs=200 batch=32 device=0 name=marker_model_training
+yolo segment train data=/path/to/your/leaf/dataset/data.yaml model=model=/path/to/your/leaf/model.pt epochs=200 batch=32 device=0 name=leaf_model_training
 ```
 
 - **Marker Segmentation:**
 
 ```
-yolo task=segment mode=predict model=/path/to/marker.pt source=/path/to/your/original/image/folder conf=0.5 show_labels=True show_conf=False boxes=True max_det=4 save_txt=True device=cpu
+yolo task=segment mode=predict model=/path/to/marker.pt source=/path/to/your/original/image/folder conf=0.5 show_labels=True show_conf=False boxes=True max_det=4 save_txt=True device=cpu name=marker
 ```
 - **Image Undistortion:**
 ```
@@ -121,7 +123,7 @@ optional arguments:
 ```
 - **Marker Segmentation:**
 ```
-yolo task=segment mode=predict model=/path/to/leaf.pt source=/path/to/your/undistorted/image/folder conf=0.5 show_labels=True show_conf=False boxes=True max_det=1 save_txt=True device=cpu
+yolo task=segment mode=predict model=/path/to/leaf.pt source=/path/to/your/undistorted/image/folder conf=0.5 show_labels=True show_conf=False boxes=True max_det=1 save_txt=True device=cpu name=leaf
 ```
 - **Leaf width calculation:**
 ```
