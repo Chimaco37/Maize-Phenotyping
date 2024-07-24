@@ -9,24 +9,26 @@
 ## Setup
 
 1. **Clone the repository:**
-```
+```bash
 git clone https://github.com/Chimaco37/Maize-Phenotyping.git
 ```
 2. **Install dependencies (Only when you need to use CLI):**
-3. 
-```
+
+```bash
 cd Maize-Phenotyping/
 pip install -r requirements.txt
 ```
 
 3. **Download necessary models:**
+
 First, download the required model files from the [Models Figshare Repository](https://doi.org/10.6084/m9.figshare.26282731).
 
-- **Placement of model files:**
-**For the GUI of the ear phenotyping system:**
+**Placement of model files:**
+
+- **For the GUI of the ear phenotyping system:**
   Place the downloaded model files in the specified directory with the following steps:
   
- ```
+```bash
 cd ear/GUI/
 unzip Models.zip
 cp Models/Ear_Models/* models/
