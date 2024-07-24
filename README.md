@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/5669967a-a1e1-4fe0-bb95-e06014fecdfd)![logo](https://github.com/user-attachments/assets/1392e8f6-083a-4b8b-8c88-b227d3edfdba)
+![logo](https://github.com/user-attachments/assets/1392e8f6-083a-4b8b-8c88-b227d3edfdba)
 # Maize Phenotyping System
 > DIY ultra-affordable, high-throughput, and accurate maize phenotyping systems working at single-plant resolution in field conditions
 
