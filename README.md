@@ -15,6 +15,7 @@ git clone https://github.com/Chimaco37/Maize-Phenotyping.git
 2. **Install dependencies:**
 ```
 cd Maize-Phenotyping/
+
 # Only when you need to use CLI
 pip install -r requirements.txt
 ```
