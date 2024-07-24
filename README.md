@@ -1,11 +1,7 @@
-![logo](https://github.com/user-attachments/assets/1392e8f6-083a-4b8b-8c88-b227d3edfdba)
+![image](https://github.com/user-attachments/assets/5669967a-a1e1-4fe0-bb95-e06014fecdfd)![logo](https://github.com/user-attachments/assets/1392e8f6-083a-4b8b-8c88-b227d3edfdba)
 # Maize Phenotyping System
 > DIY ultra-affordable, high-throughput, and accurate maize phenotyping systems working at single-plant resolution in field conditions
 
-## Features
-
-- **Graphical User Interface (GUI):** User-friendly interface for users without programming expertise.
-- **Command Line Interface (CLI):** Direct use via command line.
 
 ## Setup
 
@@ -21,9 +17,31 @@ pip install -r requirements.txt
 3. **Download necessary models:**
 - [Figshare Repository](https://doi.org/10.6084/m9.figshare.26282731)
 
+## Features
+
+- **Graphical User Interface (GUI):** User-friendly interface for users without programming expertise.
+- **Command Line Interface (CLI):** Direct use via command line.
+
+## GUI Usage
+### 🦒The 'Giraffe' System
+![image](https://github.com/user-attachments/assets/6d37a213-d0c5-4445-9cfa-335f4e5c00e6)
+
+### 🐿️The 'Squirrel' System
+![image](https://github.com/user-attachments/assets/efc8459c-55f9-4a39-a1b8-0e457a93f021)
+
+### 🦎The 'Lizard' System
+![image](https://github.com/user-attachments/assets/6e06a325-d988-446e-b2c6-13a2b721f2d9)
+
+
 ## CLI Usage
 
 ### 🦒The 'Giraffe' System
+
+- **Model training:**
+
+```bash
+yolo segment train data=/path/to/your/plant_architecture/dataset/data.yaml model=/path/to/your/model.pt epochs=200 patience=30 batch=64 imgsz=640 device=0,1,2,3 name=model_train
+```
 
 - **Model inference:**
 
@@ -42,6 +60,12 @@ optional arguments:
 
 
 ### 🐿️The 'Squirrel' System
+
+- **Model training:**
+
+```bash
+yolo segment train data=/path/to/your/dataset/data.yaml model=yolov8x-seg.pt epochs=200 batch=32 imgsz=1080 device=0,1,2,3 name=Leaf
+```
 
 - **Video Preprocessing:**
 ```
@@ -75,6 +99,11 @@ optional arguments:
 
 
 ### 🦎The 'Lizard' System
+- **Model training:**
+
+```bash
+yolo segment train data=/path/to/your/dataset/data.yaml model=/path/to/your/model.pt epochs=200 patience=30 seed=2 batch=64 imgsz=640 device=0,1,2,3 name=model_train
+```
 
 - **Marker Segmentation:**
 
