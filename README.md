@@ -59,7 +59,7 @@
 
 - **Model Inference:**  
   Click the "Model Inference" button, select the folder containing the original videos and the folder for output results.  
-  The system will then process the videos and ultimately generate phenotypic data.
+  The system will then process the videos and generate phenotypic data.
 
 ### 🐿️The 'Squirrel' System
 ![image](https://github.com/user-attachments/assets/efc8459c-55f9-4a39-a1b8-0e457a93f021)
@@ -78,7 +78,7 @@
 
 - **Model inference:**  
   Click the "Model Inference" button and choose the folder with the original leaf images and the results output folder.  
-  The marker inference model will process these images, which will be corrected for distortions and analyzed using the leaf model inference, finally outputting leaf width data.
+  The marker inference model will process these images, which will be undistorted and analyzed using the leaf model inference, finally outputting leaf width data.
 
 
 ## CLI Usage
