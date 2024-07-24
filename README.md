@@ -15,7 +15,7 @@ cd Maize-Phenotyping/
 pip install -r requirements.txt
 ```
 3. **Download necessary models:**
-- [Modles Figshare Repository](https://doi.org/10.6084/m9.figshare.26282731)
+- [Models Figshare Repository](https://doi.org/10.6084/m9.figshare.26282731)
 
 4. **Download GUIs:**
 - [GUIs Figshare Repository](https://doi.org/10.6084/m9.figshare.26363107)
