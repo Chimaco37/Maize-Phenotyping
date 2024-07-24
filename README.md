@@ -25,7 +25,7 @@ First, download the required model files from the [Models Figshare Repository](h
 
 **Placement of model files:**
 
-- **For the GUI of the ear phenotyping system:**
+- **For the GUI of the ear phenotyping system:**  
   Place the downloaded model files in the specified directory with the following steps:
   
 ```bash
@@ -34,13 +34,13 @@ unzip Models.zip
 cp Models/Ear_Models/* models/
 ```
 
-**For Command Line Interface (CLI) usage:**
+**For Command Line Interface (CLI) usage:**  
   You can place the models in any location that is convenient for you.
 
 4. **Download GUIs:**
 Download the GUI files from the [GUIs Figshare Repository](https://doi.org/10.6084/m9.figshare.26363107).
 
-- **Placement of GUI files:**
+- **Placement of GUI files:**  
   After downloading, place the GUI files in the respective ./GUI directory with these steps:
   
 ```
