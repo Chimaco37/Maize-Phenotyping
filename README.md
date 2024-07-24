@@ -2,6 +2,9 @@
 # Maize Phenotyping System
 > DIY ultra-affordable, high-throughput, and accurate maize phenotyping systems working at single-plant resolution in field conditions
 
+## Features
+- **Graphical User Interface (GUI):** User-friendly interface for users without programming expertise.
+- **Command Line Interface (CLI):** Direct use via command line.
 
 ## Setup
 
@@ -12,18 +15,36 @@ git clone https://github.com/Chimaco37/Maize-Phenotyping.git
 2. **Install dependencies:**
 ```
 cd Maize-Phenotyping/
+```
+**Only when you need to use CLI**
+```
 pip install -r requirements.txt
 ```
+
 3. **Download necessary models:**
-- [Models Figshare Repository](https://doi.org/10.6084/m9.figshare.26282731)
+First, download the required model files from the [Models Figshare Repository](https://doi.org/10.6084/m9.figshare.26282731).
+
+**Placement of model files:**
+- For the GUI of the ear phenotyping system:
+Place the downloaded model files in the specified directory with the following steps:
+ ```
+cd ear/GUI/
+unzip Models.zip
+cp Models/Ear_Models/* models/
+```
+- For Command Line Interface (CLI) usage:
+You can place the models in any location that is convenient for you.
 
 4. **Download GUIs:**
-- [GUIs Figshare Repository](https://doi.org/10.6084/m9.figshare.26363107)
-
-## Features
-
-- **Graphical User Interface (GUI):** User-friendly interface for users without programming expertise.
-- **Command Line Interface (CLI):** Direct use via command line.
+Download the GUI files from the [GUIs Figshare Repository](https://doi.org/10.6084/m9.figshare.26363107).
+**Placement of GUI files:**
+- **For example, for the leaf phenotyping system:**
+After downloading, place the GUI files in the respective ./GUI directory with these steps:
+```
+cd leaf/GUI/
+unzip GUIs.zip
+cp GUIs/Lizard.exe ./
+```
 
 ## GUI Usage
 ### 🦒The 'Giraffe' System
