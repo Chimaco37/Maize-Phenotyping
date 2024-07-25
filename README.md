@@ -62,7 +62,7 @@
   The system will then process the videos and generate phenotypic data.
 
 ### 🐿️The 'Squirrel' System
-![image](https://github.com/user-attachments/assets/efc8459c-55f9-4a39-a1b8-0e457a93f021)
+![image](https://github.com/user-attachments/assets/b7045c19-be7b-40f4-835d-b8b99b7ed893)
 
 - **Video Process:**  
   Click the "Video Process" button, choose the video folder and the folder where images will be saved.  
