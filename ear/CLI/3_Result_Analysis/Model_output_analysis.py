@@ -147,10 +147,9 @@ def calculate_ear_length_width(polygon):
 
     # 获取线段与多边形边界的交点
     intersection_line = cutting_line.intersection(polygon)
+    # ear_length = 0.2585716 + 0.01987238 * 1440 * max(l, w)  # 穗长的拟合曲线
 
-    #     ear_length = max(l,w) * height_scale_ratio
-    ear_length = 0.2585716 + 0.01987238 * 1440 * max(l, w)  # 穗长的拟合曲线
-
+    ear_length = max(l,w) * height_scale_ratio
     ear_width = intersection_line.length * width_scale_ratio
 
     return ear_length, ear_width
