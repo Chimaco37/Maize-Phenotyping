@@ -124,6 +124,7 @@ optional arguments:
 
 ```bash
 yolo segment train data=/path/to/your/projection/dataset/data.yaml model=/path/to/your/projection/model.pt epochs=200 batch=4 patience=30 device=0,1,2,3 name=projection_model_training
+
 yolo segment train data=/path/to/your/ear/dataset/data.yaml model=/path/to/your/ear/model.pt epochs=200 batch=32 patience=30 device=0 name=ear_model_training
 ```
 
